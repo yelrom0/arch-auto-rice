@@ -6,9 +6,9 @@ if [ "$EUID" -ne 0 ]; then
     exec sudo -- "$0" "$@"
 fi
 
-WORKDIR="./build"
+WORKDIR="../../build"
 
-ehco "Installing Yay and its dependancies"
+echo "Installing Yay and its dependancies"
 mkdir -p "$WORKDIR" && cd "$WORKDIR"
 pacman -Syu && pacman -S --needed git base-devel
 
